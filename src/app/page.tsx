@@ -335,24 +335,53 @@ function SocialProof() {
           ))}
         </div>
 
-        {/* Review card */}
-        <div className="mx-auto max-w-2xl rounded-3xl bg-white p-8 shadow-sm ring-1 ring-slate-100 sm:p-10">
-          <div className="mb-4 flex gap-0.5">
-            {[...Array(5)].map((_, i) => (
-              <svg key={i} width="18" height="18" viewBox="0 0 24 24" fill="#facc15">
-                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-              </svg>
+      </div>
+
+      {/* Auto-scrolling review cards — full width */}
+      <div className="marquee-wrapper">
+          <div className="marquee-track">
+            {[
+              { name: "Alex T.", text: "Great for tracking and managing trades. The clean interface and AI insights help reduce decision-making time significantly." },
+              { name: "Sarah M.", text: "Finally an app that makes AI-driven investing accessible. The real-time data and recommendations are incredibly accurate." },
+              { name: "James K.", text: "Love the portfolio tracking and news feed. It's become my go-to app for market analysis every single morning." },
+              { name: "Emily R.", text: "The AI chat assistant is a game changer. I can ask anything about a stock and get detailed, data-backed responses instantly." },
+              { name: "David L.", text: "Clean design, fast data, and smart insights. This replaced three other apps I was using. Highly recommend to any trader." },
+              { name: "Michelle W.", text: "As a beginner investor, the AI recommendations give me confidence. The interface is intuitive and the analysis is spot on." },
+              { name: "Ryan P.", text: "Multi-asset support is fantastic. I track stocks, crypto, and forex all in one place. The AI signals are surprisingly reliable." },
+              { name: "Jessica H.", text: "Best investment app I've used. The real-time alerts and AI-powered analysis have genuinely improved my trading results." },
+              { name: "Alex T.", text: "Great for tracking and managing trades. The clean interface and AI insights help reduce decision-making time significantly." },
+              { name: "Sarah M.", text: "Finally an app that makes AI-driven investing accessible. The real-time data and recommendations are incredibly accurate." },
+              { name: "James K.", text: "Love the portfolio tracking and news feed. It's become my go-to app for market analysis every single morning." },
+              { name: "Emily R.", text: "The AI chat assistant is a game changer. I can ask anything about a stock and get detailed, data-backed responses instantly." },
+              { name: "David L.", text: "Clean design, fast data, and smart insights. This replaced three other apps I was using. Highly recommend to any trader." },
+              { name: "Michelle W.", text: "As a beginner investor, the AI recommendations give me confidence. The interface is intuitive and the analysis is spot on." },
+              { name: "Ryan P.", text: "Multi-asset support is fantastic. I track stocks, crypto, and forex all in one place. The AI signals are surprisingly reliable." },
+              { name: "Jessica H.", text: "Best investment app I've used. The real-time alerts and AI-powered analysis have genuinely improved my trading results." },
+            ].map((review, i) => (
+              <div key={i} className="rounded-3xl bg-white p-8 shadow-sm ring-1 ring-slate-100 flex-shrink-0 w-[380px]">
+                <div className="mb-4 flex gap-0.5">
+                  {[...Array(5)].map((_, j) => (
+                    <svg key={j} width="18" height="18" viewBox="0 0 24 24" fill="#facc15">
+                      <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                    </svg>
+                  ))}
+                </div>
+                <blockquote className="mb-5 text-lg leading-relaxed text-slate-700">
+                  &ldquo;{review.text}&rdquo;
+                </blockquote>
+                <div className="flex items-center gap-3">
+                  <div className="flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-br from-blue-500 to-violet-500 text-xs font-bold text-white">
+                    {review.name.charAt(0)}
+                  </div>
+                  <div>
+                    <cite className="text-sm font-semibold not-italic text-slate-700">{review.name}</cite>
+                    <div className="text-xs text-slate-400">App Store Review</div>
+                  </div>
+                </div>
+              </div>
             ))}
           </div>
-          <blockquote className="mb-4 text-lg leading-relaxed text-slate-700">
-            &ldquo;Great for tracking and managing trades. The clean interface
-            and AI insights help reduce decision-making time significantly.&rdquo;
-          </blockquote>
-          <cite className="text-sm font-medium not-italic text-slate-400">
-            App Store Review
-          </cite>
         </div>
-      </div>
     </section>
   );
 }
