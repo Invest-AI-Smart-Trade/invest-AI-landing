@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const APP_STORE_URL =
   "https://apps.apple.com/us/app/invest-ai-smart-trading/id6752223346";
 
@@ -6,21 +8,7 @@ function Navbar() {
     <nav className="fixed top-0 z-50 w-full bg-white/70 backdrop-blur-xl border-b border-slate-100">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
         <div className="flex items-center gap-2.5">
-          <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-blue-500 to-violet-600 shadow-md shadow-blue-500/20">
-            <svg
-              width="18"
-              height="18"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="white"
-              strokeWidth="2.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <polyline points="22 7 13.5 15.5 8.5 10.5 2 17" />
-              <polyline points="16 7 22 7 22 13" />
-            </svg>
-          </div>
+          <Image src="/logo.png" alt="Invest AI" width={36} height={36} className="rounded-xl" />
           <span className="text-lg font-bold text-slate-900">Invest AI</span>
         </div>
         <div className="flex items-center gap-8">
@@ -419,20 +407,7 @@ function Footer() {
     <footer className="border-t border-slate-100 bg-white px-6 py-8">
       <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 sm:flex-row">
         <div className="flex items-center gap-2">
-          <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-gradient-to-br from-blue-500 to-violet-600">
-            <svg
-              width="12"
-              height="12"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="white"
-              strokeWidth="3"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <polyline points="22 7 13.5 15.5 8.5 10.5 2 17" />
-            </svg>
-          </div>
+          <Image src="/logo.png" alt="Invest AI" width={28} height={28} className="rounded-lg" />
           <span className="text-sm font-semibold text-slate-700">Invest AI</span>
         </div>
         <div className="flex items-center gap-6 text-sm text-slate-400">
