@@ -1,40 +1,28 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
 export const metadata: Metadata = {
-  title: "Invest AI — Smart Trading Powered by Artificial Intelligence",
+  title: "Invest AI | Intelligence For Every Trade",
   description:
-    "AI-powered investment platform with real-time market data, smart analysis, and personalized recommendations. Download free on the App Store.",
+    "Invest AI combines live market context, portfolio tracking, and AI decision support so you can move with conviction.",
   keywords: [
-    "invest ai",
-    "smart trading",
-    "ai trading",
-    "stock analysis",
-    "investment app",
-    "portfolio management",
+    "Invest AI",
+    "AI trading app",
+    "investment intelligence",
+    "portfolio insights",
+    "market analysis",
   ],
   openGraph: {
-    title: "Invest AI — Smart Trading Powered by AI",
+    title: "Invest AI | Intelligence For Every Trade",
     description:
-      "AI-powered investment platform with real-time market data, smart analysis, and personalized recommendations.",
+      "A modern investing workspace with AI signals, risk framing, and real-time market awareness.",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Invest AI — Smart Trading Powered by AI",
+    title: "Invest AI | Intelligence For Every Trade",
     description:
-      "AI-powered investment platform with real-time market data, smart analysis, and personalized recommendations.",
+      "Trade with a sharper edge using AI analysis and real-time portfolio intelligence.",
   },
 };
 
@@ -45,11 +33,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
-      </body>
+      <body className="antialiased">{children}</body>
     </html>
   );
 }
