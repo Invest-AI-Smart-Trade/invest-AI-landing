@@ -17,36 +17,42 @@ const marketTape = [
 
 const coreModules = [
   {
+    icon: "📡",
     title: "Signal Engine",
     description:
       "Scores setups with confidence, invalidation levels, and upside ranges before you place a trade.",
     tag: "Probability-first",
   },
   {
+    icon: "🛡️",
     title: "Risk Grid",
     description:
       "Shows concentration, correlation, and drawdown exposure across your entire portfolio in real time.",
     tag: "Capital protection",
   },
   {
+    icon: "📰",
     title: "Narrative Feed",
     description:
       "Clusters market headlines into themes and explains what each theme means for your active positions.",
     tag: "Context over noise",
   },
   {
+    icon: "🤖",
     title: "Coach Mode",
     description:
       "Ask questions in plain language and get direct strategy guidance grounded in your portfolio state.",
     tag: "Conversational AI",
   },
   {
+    icon: "🔗",
     title: "Cross-Asset Lens",
     description:
       "Track stocks, crypto, and macro ETFs together so hidden relationships are visible before they matter.",
     tag: "One workspace",
   },
   {
+    icon: "🔔",
     title: "Alert Design",
     description:
       "Alerts trigger on market structure and volatility regimes, not just static percentage movements.",
@@ -79,22 +85,26 @@ const comparisonRows = [
 
 const workflowSteps = [
   {
-    title: "Import and map your book",
+    num: "01",
+    title: "Import & map your book",
     detail:
-      "Connect holdings and watchlists so the app can establish exposure, bias, and concentration across assets.",
+      "Connect holdings and watchlists so the app establishes exposure, bias, and concentration across assets.",
   },
   {
+    num: "02",
     title: "Run the morning brief",
     detail:
       "Start each session with ranked opportunities, risk flags, and macro themes worth immediate attention.",
   },
   {
+    num: "03",
     title: "Validate with AI coach",
     detail:
       "Pressure-test each setup by asking for downside scenarios, trigger levels, and position sizing ideas.",
   },
   {
-    title: "Execute and review",
+    num: "04",
+    title: "Execute & review",
     detail:
       "Capture entries, track post-trade outcomes, and refine your process with structured feedback loops.",
   },
@@ -177,26 +187,23 @@ function BrandMark() {
       <Image
         src="/logo.png"
         alt="Invest AI"
-        width={34}
-        height={34}
-        className="rounded-xl"
+        width={32}
+        height={32}
+        className="rounded-lg"
       />
-      <div>
-        <p className="display-font text-sm font-semibold leading-none text-[var(--color-ink)]">
-          Invest AI
-        </p>
-        <p className="text-[11px] uppercase tracking-[0.2em] text-muted">Market intelligence</p>
-      </div>
+      <span className="display-font text-sm font-semibold text-[var(--color-ink)]">
+        Invest AI
+      </span>
     </div>
   );
 }
 
 function Navbar() {
   return (
-    <header className="fixed inset-x-0 top-0 z-50 px-4 py-4 sm:px-8">
-      <div className="mx-auto flex w-full max-w-6xl items-center justify-between rounded-full border border-[var(--color-line)] bg-[rgba(255,255,255,0.72)] px-4 py-2.5 shadow-[0_10px_25px_rgba(15,25,44,0.08)] backdrop-blur-xl sm:px-6">
+    <header className="fixed inset-x-0 top-0 z-50 px-4 py-3 sm:px-6">
+      <nav className="glass mx-auto flex w-full max-w-5xl items-center justify-between rounded-2xl px-4 py-2.5 sm:px-5">
         <BrandMark />
-        <nav className="hidden items-center gap-6 text-sm font-semibold text-muted lg:flex">
+        <div className="hidden items-center gap-7 text-sm font-medium text-[var(--color-ink-secondary)] lg:flex">
           <a href="#features" className="transition-colors hover:text-[var(--color-ink)]">
             Features
           </a>
@@ -206,109 +213,114 @@ function Navbar() {
           <a href="#workflow" className="transition-colors hover:text-[var(--color-ink)]">
             Workflow
           </a>
-          <a href="#use-cases" className="transition-colors hover:text-[var(--color-ink)]">
-            Use Cases
-          </a>
           <a href="#faq" className="transition-colors hover:text-[var(--color-ink)]">
             FAQ
           </a>
-        </nav>
-        <a href={APP_STORE_URL} target="_blank" rel="noopener noreferrer" className="cta-primary">
-          Download App
+        </div>
+        <a href={APP_STORE_URL} target="_blank" rel="noopener noreferrer" className="btn-primary !py-2 !px-4 !text-sm !rounded-xl">
+          Download
         </a>
-      </div>
+      </nav>
     </header>
   );
 }
 
 function Hero() {
   return (
-    <section className="relative overflow-hidden px-4 pb-12 pt-28 sm:px-8 sm:pt-32">
-      <div className="hero-blur right-[8%] top-[12%] h-44 w-44 bg-[var(--color-highlight-soft)]" />
-      <div className="hero-blur bottom-[8%] left-[6%] h-40 w-40 bg-[var(--color-accent-soft)]" />
+    <section className="relative overflow-hidden px-4 pb-16 pt-28 sm:px-6 sm:pt-36">
+      {/* Ambient glow */}
+      <div className="pointer-events-none absolute left-1/2 top-0 -translate-x-1/2 h-[600px] w-[900px] rounded-full bg-[radial-gradient(ellipse,rgba(16,185,129,0.12),transparent_70%)]" />
 
-      <div className="mx-auto grid max-w-6xl gap-9 lg:grid-cols-[1.02fr_0.98fr] lg:items-center">
-        <div className="reveal">
-          <div className="badge mb-5">
+      <div className="section-container text-center">
+        <div className="reveal mx-auto max-w-3xl">
+          <div className="badge mx-auto mb-6">
             <span className="badge-dot" aria-hidden="true" />
             Live context for every decision
           </div>
 
-          <h1 className="display-font max-w-xl text-4xl font-semibold leading-[1.03] text-[var(--color-ink)] sm:text-6xl xl:text-[4.45rem]">
-            Trade with a full-context
-            <span className="block text-[var(--color-accent-deep)]">AI decision desk</span>
+          <h1 className="display-font text-4xl font-bold leading-[1.08] sm:text-6xl xl:text-7xl">
+            Trade with a
+            <br />
+            <span className="gradient-text">full-context AI</span>
+            <br />
+            decision desk
           </h1>
 
-          <p className="mt-5 max-w-xl text-lg text-muted">
-            Invest AI combines signal scoring, portfolio risk overlays, and strategy guidance so you can act with clarity instead of speed alone.
+          <p className="mx-auto mt-5 max-w-xl text-lg text-[var(--color-ink-secondary)] sm:text-xl">
+            Signal scoring, portfolio risk overlays, and strategy guidance — so you act with clarity, not impulse.
           </p>
 
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
-            <a href={APP_STORE_URL} target="_blank" rel="noopener noreferrer" className="cta-primary">
+          <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+            <a href={APP_STORE_URL} target="_blank" rel="noopener noreferrer" className="btn-primary">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+              </svg>
               Download on App Store
             </a>
-            <a href="#features" className="cta-secondary">
-              Explore architecture
+            <a href="#features" className="btn-secondary">
+              Explore features
             </a>
-          </div>
-
-          <div className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-4">
-            {[
-              { label: "App Store", value: "5.0" },
-              { label: "Markets", value: "Multi-asset" },
-              { label: "Setup", value: "Minutes" },
-              { label: "Cost", value: "Free start" },
-            ].map((item) => (
-              <div key={item.label} className="surface px-4 py-3">
-                <p className="text-[10px] uppercase tracking-[0.16em] text-muted">{item.label}</p>
-                <p className="mt-1 display-font text-lg font-semibold text-[var(--color-ink)]">
-                  {item.value}
-                </p>
-              </div>
-            ))}
           </div>
         </div>
 
-        <div className="reveal" style={{ animationDelay: "0.1s" }}>
-          <div className="dashboard-panel rounded-[30px] p-5 sm:p-6">
-            <div className="flex items-center justify-between">
+        {/* Stats bar */}
+        <div className="reveal mx-auto mt-14 grid max-w-2xl grid-cols-2 gap-3 sm:grid-cols-4" style={{ animationDelay: "0.1s" }}>
+          {[
+            { label: "App Store", value: "5.0 ★" },
+            { label: "Markets", value: "Multi-asset" },
+            { label: "Setup", value: "Minutes" },
+            { label: "Cost", value: "Free start" },
+          ].map((item) => (
+            <div key={item.label} className="glass-light px-4 py-3 text-center">
+              <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-[var(--color-muted)]">{item.label}</p>
+              <p className="mt-1 display-font text-base font-bold text-[var(--color-ink)] sm:text-lg">
+                {item.value}
+              </p>
+            </div>
+          ))}
+        </div>
+
+        {/* Dashboard preview */}
+        <div className="reveal mx-auto mt-12 max-w-3xl" style={{ animationDelay: "0.18s" }}>
+          <div className="dashboard-panel relative p-5 sm:p-7">
+            <div className="relative z-10 flex items-center justify-between">
               <div>
-                <p className="text-[11px] uppercase tracking-[0.18em] text-slate-300">Live account snapshot</p>
-                <p className="display-font text-3xl font-semibold text-white">$52,810</p>
+                <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[var(--color-muted)]">Live account snapshot</p>
+                <p className="display-font text-3xl font-bold text-[var(--color-ink)] sm:text-4xl">$52,810</p>
               </div>
               <span className="signal-pill good">+14.2% 30D</span>
             </div>
 
-            <div className="dashboard-grid mt-5 rounded-2xl border border-white/10 p-4">
-              <svg viewBox="0 0 360 150" className="h-36 w-full" fill="none">
+            <div className="relative z-10 mt-5 rounded-xl border border-[var(--color-line)] bg-[rgba(14,20,30,0.5)] p-4">
+              <svg viewBox="0 0 400 120" className="h-28 w-full sm:h-32" fill="none">
                 <defs>
-                  <linearGradient id="deskLine" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0%" stopColor="#6cf0db" stopOpacity="0.9" />
-                    <stop offset="100%" stopColor="#6cf0db" stopOpacity="0.1" />
+                  <linearGradient id="chartGrad" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stopColor="#10b981" stopOpacity="0.3" />
+                    <stop offset="100%" stopColor="#10b981" stopOpacity="0" />
                   </linearGradient>
                 </defs>
                 <path
-                  d="M0 118C18 110 35 107 52 106C70 105 87 108 104 96C122 84 139 62 156 55C174 48 191 53 208 46C226 39 243 20 260 16C278 12 295 22 312 15C330 8 345 10 360 5"
-                  stroke="#73f6dd"
-                  strokeWidth="3"
+                  d="M0 95 C20 88 40 85 60 84 C80 83 100 86 120 74 C140 62 160 40 180 33 C200 26 220 31 240 24 C260 17 280 5 300 3 C320 1 340 8 360 4 C380 1 395 3 400 2"
+                  stroke="#10b981"
+                  strokeWidth="2.5"
                   strokeLinecap="round"
                 />
                 <path
-                  d="M0 118C18 110 35 107 52 106C70 105 87 108 104 96C122 84 139 62 156 55C174 48 191 53 208 46C226 39 243 20 260 16C278 12 295 22 312 15C330 8 345 10 360 5V150H0V118Z"
-                  fill="url(#deskLine)"
+                  d="M0 95 C20 88 40 85 60 84 C80 83 100 86 120 74 C140 62 160 40 180 33 C200 26 220 31 240 24 C260 17 280 5 300 3 C320 1 340 8 360 4 C380 1 395 3 400 2 V120 H0 Z"
+                  fill="url(#chartGrad)"
                 />
               </svg>
             </div>
 
-            <div className="mt-5 grid gap-3 sm:grid-cols-2">
-              <div className="rounded-xl border border-white/10 bg-white/5 p-3.5">
-                <p className="text-xs uppercase tracking-[0.16em] text-slate-300">Top signal</p>
-                <p className="mt-1 text-sm font-semibold text-white">AAPL breakout continuation</p>
+            <div className="relative z-10 mt-4 grid gap-3 sm:grid-cols-2">
+              <div className="rounded-xl border border-[var(--color-line)] bg-[rgba(14,20,30,0.5)] p-3.5">
+                <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-[var(--color-muted)]">Top signal</p>
+                <p className="mt-1 text-sm font-semibold text-[var(--color-ink)]">AAPL breakout continuation</p>
                 <span className="mt-2 inline-flex signal-pill good">74% confidence</span>
               </div>
-              <div className="rounded-xl border border-white/10 bg-white/5 p-3.5">
-                <p className="text-xs uppercase tracking-[0.16em] text-slate-300">Risk event</p>
-                <p className="mt-1 text-sm font-semibold text-white">NVDA concentration 31%</p>
+              <div className="rounded-xl border border-[var(--color-line)] bg-[rgba(14,20,30,0.5)] p-3.5">
+                <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-[var(--color-muted)]">Risk event</p>
+                <p className="mt-1 text-sm font-semibold text-[var(--color-ink)]">NVDA concentration 31%</p>
                 <span className="mt-2 inline-flex signal-pill watch">rebalance watch</span>
               </div>
             </div>
@@ -323,21 +335,22 @@ function MarketRail() {
   const tickerItems = [...marketTape, ...marketTape];
 
   return (
-    <section className="px-4 pb-8 sm:px-8 sm:pb-12">
-      <div className="mx-auto max-w-6xl surface px-3 py-3 sm:px-4">
-        <div className="market-rail">
-          <div className="market-ticker" aria-hidden="true">
-            {tickerItems.map((item, index) => {
-              const isPositive = item.change.startsWith("+");
-
-              return (
-                <div className="ticker-chip" key={`${item.ticker}-${index}`}>
-                  <span>{item.ticker}</span>
-                  <span>{item.price}</span>
-                  <span className={isPositive ? "positive" : "negative"}>{item.change}</span>
-                </div>
-              );
-            })}
+    <section className="px-4 pb-12 sm:px-6 sm:pb-16">
+      <div className="section-container">
+        <div className="glass-light overflow-hidden rounded-2xl px-2 py-2.5">
+          <div className="market-rail">
+            <div className="market-ticker" aria-hidden="true">
+              {tickerItems.map((item, index) => {
+                const isPositive = item.change.startsWith("+");
+                return (
+                  <div className="ticker-chip" key={`${item.ticker}-${index}`}>
+                    <span className="font-semibold text-[var(--color-ink)]">{item.ticker}</span>
+                    <span className="text-[var(--color-ink-secondary)]">{item.price}</span>
+                    <span className={isPositive ? "positive" : "negative"}>{item.change}</span>
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </div>
       </div>
@@ -347,26 +360,31 @@ function MarketRail() {
 
 function Features() {
   return (
-    <section id="features" className="px-4 py-16 sm:px-8 sm:py-20">
-      <div className="mx-auto max-w-6xl">
-        <div className="reveal max-w-2xl">
-          <p className="section-kicker">Core modules</p>
-          <h2 className="display-font mt-3 text-3xl font-semibold text-[var(--color-ink)] sm:text-5xl">
-            Everything you need in one decision workflow
+    <section id="features" className="px-4 py-20 sm:px-6 sm:py-28">
+      <div className="section-container">
+        <div className="reveal mx-auto max-w-2xl text-center">
+          <p className="section-label">Core modules</p>
+          <h2 className="display-font mt-3 text-3xl font-bold text-[var(--color-ink)] sm:text-5xl">
+            Everything in one
+            <br />
+            <span className="gradient-text">decision workflow</span>
           </h2>
-          <p className="mt-4 text-lg text-muted">
-            The platform is structured around preparation, execution, and review so every screen supports an actual trading routine.
+          <p className="mt-4 text-lg text-[var(--color-ink-secondary)]">
+            Every screen supports an actual trading routine — preparation, execution, and review.
           </p>
         </div>
 
-        <div className="stagger mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+        <div className="stagger mt-12 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
           {coreModules.map((module) => (
-            <article key={module.title} className="surface module-card p-6">
-              <p className="chip-tag">{module.tag}</p>
-              <h3 className="display-font mt-3 text-2xl font-semibold text-[var(--color-ink)]">
+            <article key={module.title} className="glass-card p-6">
+              <div className="flex items-center gap-3">
+                <span className="text-2xl">{module.icon}</span>
+                <p className="chip-tag">{module.tag}</p>
+              </div>
+              <h3 className="display-font mt-4 text-xl font-bold text-[var(--color-ink)]">
                 {module.title}
               </h3>
-              <p className="mt-3 text-base text-muted">{module.description}</p>
+              <p className="mt-2 text-[15px] leading-relaxed text-[var(--color-ink-secondary)]">{module.description}</p>
             </article>
           ))}
         </div>
@@ -377,15 +395,17 @@ function Features() {
 
 function EdgeSection() {
   return (
-    <section id="edge" className="px-4 py-8 sm:px-8 sm:py-12">
-      <div className="mx-auto grid max-w-6xl gap-6 lg:grid-cols-[1.05fr_0.95fr]">
-        <div className="surface-strong p-6 sm:p-8">
-          <p className="section-kicker">Why it feels different</p>
-          <h2 className="display-font mt-3 text-3xl font-semibold text-[var(--color-ink)] sm:text-4xl">
-            Designed to reduce impulse decisions
+    <section id="edge" className="px-4 py-12 sm:px-6 sm:py-16">
+      <div className="section-container grid gap-5 lg:grid-cols-[1.1fr_0.9fr]">
+        {/* Comparison side */}
+        <div className="glass p-6 sm:p-8">
+          <p className="section-label">Why it feels different</p>
+          <h2 className="display-font mt-3 text-2xl font-bold text-[var(--color-ink)] sm:text-3xl">
+            Designed to reduce
+            <br />impulse decisions
           </h2>
-          <p className="mt-4 text-muted">
-            Most investing apps show you data. Invest AI translates that data into decision context and risk framing before you act.
+          <p className="mt-3 text-[var(--color-ink-secondary)]">
+            Most investing apps show data. Invest AI translates it into decision context and risk framing before you act.
           </p>
 
           <div className="comparison-table mt-6">
@@ -396,7 +416,7 @@ function EdgeSection() {
             </div>
             {comparisonRows.map((row) => (
               <div key={row.topic} className="comparison-row">
-                <span>{row.topic}</span>
+                <span className="font-medium">{row.topic}</span>
                 <span>{row.investAI}</span>
                 <span>{row.typical}</span>
               </div>
@@ -404,17 +424,19 @@ function EdgeSection() {
           </div>
         </div>
 
-        <div className="surface p-6 sm:p-8">
-          <p className="section-kicker">Day one outcomes</p>
-          <div className="stagger mt-4 space-y-4">
+        {/* Outcomes side */}
+        <div className="glass p-6 sm:p-8">
+          <p className="section-label">Day one outcomes</p>
+          <div className="stagger mt-5 space-y-3">
             {[
               "You get one prioritized brief instead of scanning multiple sources.",
               "Signals include invalidation levels so every trade has discipline.",
               "Risk warnings are visible before exposure drifts too far.",
               "Coach Mode answers strategy questions in context of your own book.",
-            ].map((point) => (
-              <div key={point} className="rounded-2xl border border-[var(--color-line)] bg-white/72 p-4 text-[15px] text-[var(--color-ink)]">
-                {point}
+            ].map((point, i) => (
+              <div key={i} className="flex gap-3 rounded-xl border border-[var(--color-line)] bg-[rgba(14,20,30,0.3)] p-4">
+                <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-md bg-[var(--color-accent-soft)] text-xs font-bold text-[var(--color-accent-light)]">✓</span>
+                <p className="text-[15px] text-[var(--color-ink-secondary)]">{point}</p>
               </div>
             ))}
           </div>
@@ -426,33 +448,35 @@ function EdgeSection() {
 
 function Workflow() {
   return (
-    <section id="workflow" className="px-4 py-12 sm:px-8 sm:py-16">
-      <div className="mx-auto grid max-w-6xl gap-6 lg:grid-cols-[0.92fr_1.08fr]">
-        <div className="surface-strong p-7 sm:p-9">
-          <p className="section-kicker">Daily process</p>
-          <h2 className="display-font mt-3 text-3xl font-semibold text-[var(--color-ink)] sm:text-4xl">
-            Repeatable workflow from open to close
+    <section id="workflow" className="px-4 py-16 sm:px-6 sm:py-24">
+      <div className="section-container">
+        <div className="reveal mx-auto max-w-2xl text-center">
+          <p className="section-label">Daily process</p>
+          <h2 className="display-font mt-3 text-3xl font-bold text-[var(--color-ink)] sm:text-5xl">
+            From open to close
           </h2>
-          <p className="mt-4 text-muted">
+          <p className="mt-4 text-lg text-[var(--color-ink-secondary)]">
             Follow a structured sequence every day so decisions are measured and improvements are trackable.
           </p>
         </div>
 
-        <div className="surface p-4 sm:p-6">
-          <div className="stagger space-y-4">
-            {workflowSteps.map((step, index) => (
-              <div key={step.title} className="rounded-2xl border border-[var(--color-line)] bg-white/70 p-4 sm:p-5">
-                <div className="flex items-center gap-3">
-                  <div className="flex h-9 w-9 items-center justify-center rounded-full bg-[var(--color-highlight-soft)] text-sm font-bold text-[var(--color-highlight)]">
-                    {index + 1}
+        <div className="stagger mx-auto mt-12 grid max-w-3xl gap-4">
+          {workflowSteps.map((step, index) => (
+            <div key={step.title}>
+              <div className="glass-card p-5 sm:p-6">
+                <div className="flex items-start gap-4">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[var(--color-accent-soft)] font-mono text-sm font-bold text-[var(--color-accent-light)]">
+                    {step.num}
                   </div>
-                  <h3 className="display-font text-xl font-semibold text-[var(--color-ink)]">{step.title}</h3>
+                  <div>
+                    <h3 className="display-font text-lg font-bold text-[var(--color-ink)]">{step.title}</h3>
+                    <p className="mt-1.5 text-[15px] text-[var(--color-ink-secondary)]">{step.detail}</p>
+                  </div>
                 </div>
-                <p className="mt-3 text-muted">{step.detail}</p>
-                {index !== workflowSteps.length - 1 ? <div className="step-line mt-4" /> : null}
               </div>
-            ))}
-          </div>
+              {index !== workflowSteps.length - 1 && <div className="step-connector" />}
+            </div>
+          ))}
         </div>
       </div>
     </section>
@@ -461,25 +485,27 @@ function Workflow() {
 
 function UseCases() {
   return (
-    <section id="use-cases" className="px-4 py-10 sm:px-8 sm:py-14">
-      <div className="mx-auto max-w-6xl">
-        <div className="reveal max-w-2xl">
-          <p className="section-kicker">Who it is for</p>
-          <h2 className="display-font mt-3 text-3xl font-semibold text-[var(--color-ink)] sm:text-5xl">
-            Flexible enough for different investing styles
+    <section id="use-cases" className="px-4 py-12 sm:px-6 sm:py-16">
+      <div className="section-container">
+        <div className="reveal mx-auto max-w-2xl text-center">
+          <p className="section-label">Who it is for</p>
+          <h2 className="display-font mt-3 text-3xl font-bold text-[var(--color-ink)] sm:text-5xl">
+            Built for every
+            <br />
+            <span className="gradient-text">investing style</span>
           </h2>
         </div>
 
-        <div className="stagger mt-8 grid gap-4 md:grid-cols-3">
+        <div className="stagger mt-10 grid gap-4 md:grid-cols-3">
           {useCases.map((useCase) => (
-            <article key={useCase.role} className="surface persona-card p-6">
-              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--color-accent-deep)]">
+            <article key={useCase.role} className="glass-card p-6">
+              <p className="text-xs font-bold uppercase tracking-[0.14em] text-[var(--color-accent-light)]">
                 {useCase.role}
               </p>
-              <h3 className="display-font mt-2 text-2xl font-semibold text-[var(--color-ink)]">
+              <h3 className="display-font mt-2 text-xl font-bold text-[var(--color-ink)]">
                 {useCase.objective}
               </h3>
-              <p className="mt-3 text-muted">{useCase.details}</p>
+              <p className="mt-3 text-[15px] text-[var(--color-ink-secondary)]">{useCase.details}</p>
             </article>
           ))}
         </div>
@@ -490,25 +516,26 @@ function UseCases() {
 
 function Reviews() {
   return (
-    <section id="reviews" className="px-4 py-16 sm:px-8 sm:py-20">
-      <div className="mx-auto max-w-6xl">
-        <div className="reveal mb-8 max-w-2xl">
-          <p className="section-kicker">User feedback</p>
-          <h2 className="display-font mt-3 text-3xl font-semibold text-[var(--color-ink)] sm:text-5xl">
-            Trusted by traders who value process
+    <section id="reviews" className="px-4 py-16 sm:px-6 sm:py-20">
+      <div className="section-container">
+        <div className="reveal mx-auto mb-10 max-w-2xl text-center">
+          <p className="section-label">User feedback</p>
+          <h2 className="display-font mt-3 text-3xl font-bold text-[var(--color-ink)] sm:text-5xl">
+            Trusted by traders who
+            <br />value process
           </h2>
         </div>
 
         <div className="stagger grid gap-4 md:grid-cols-2 xl:grid-cols-4">
           {testimonials.map((review) => (
-            <article key={review.name} className="surface p-6">
+            <article key={review.name} className="glass-card p-5">
               <p className="quote-stars">★★★★★</p>
-              <blockquote className="mt-3 text-base leading-relaxed text-[var(--color-ink)]">
+              <blockquote className="mt-3 text-[15px] leading-relaxed text-[var(--color-ink-secondary)]">
                 &ldquo;{review.quote}&rdquo;
               </blockquote>
-              <div className="mt-5">
-                <p className="display-font text-lg font-semibold text-[var(--color-ink)]">{review.name}</p>
-                <p className="text-sm text-muted">{review.role}</p>
+              <div className="mt-4 border-t border-[var(--color-line)] pt-4">
+                <p className="text-sm font-semibold text-[var(--color-ink)]">{review.name}</p>
+                <p className="text-xs text-[var(--color-muted)]">{review.role}</p>
               </div>
             </article>
           ))}
@@ -520,12 +547,12 @@ function Reviews() {
 
 function FAQ() {
   return (
-    <section id="faq" className="px-4 py-10 sm:px-8 sm:py-14">
-      <div className="mx-auto max-w-6xl surface-strong p-6 sm:p-9">
-        <div className="max-w-2xl">
-          <p className="section-kicker">FAQ</p>
-          <h2 className="display-font mt-3 text-3xl font-semibold text-[var(--color-ink)] sm:text-4xl">
-            Common questions before you start
+    <section id="faq" className="px-4 py-12 sm:px-6 sm:py-16">
+      <div className="section-container mx-auto max-w-3xl">
+        <div className="reveal text-center">
+          <p className="section-label">FAQ</p>
+          <h2 className="display-font mt-3 text-3xl font-bold text-[var(--color-ink)] sm:text-4xl">
+            Common questions
           </h2>
         </div>
 
@@ -544,23 +571,34 @@ function FAQ() {
 
 function CTA() {
   return (
-    <section className="px-4 pb-16 pt-12 sm:px-8 sm:pb-24">
-      <div className="mx-auto max-w-6xl surface-strong overflow-hidden p-8 sm:p-12">
-        <p className="section-kicker">Start now</p>
-        <h2 className="display-font mt-3 max-w-3xl text-3xl font-semibold leading-tight text-[var(--color-ink)] sm:text-5xl">
-          Rebuild your investing routine around context, discipline, and real-time intelligence
-        </h2>
-        <p className="mt-4 max-w-2xl text-lg text-muted">
-          Download Invest AI for iOS and run your next market session with a clear system behind each decision.
-        </p>
+    <section className="px-4 pb-16 pt-8 sm:px-6 sm:pb-24">
+      <div className="section-container">
+        <div className="glass relative overflow-hidden p-8 text-center sm:p-14">
+          {/* Glow */}
+          <div className="pointer-events-none absolute left-1/2 top-0 -translate-x-1/2 h-[300px] w-[500px] rounded-full bg-[radial-gradient(ellipse,rgba(16,185,129,0.1),transparent_70%)]" />
 
-        <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
-          <a href={APP_STORE_URL} target="_blank" rel="noopener noreferrer" className="cta-primary">
-            Download on App Store
-          </a>
-          <a href="#workflow" className="cta-secondary">
-            See daily workflow
-          </a>
+          <div className="relative z-10">
+            <p className="section-label">Start now</p>
+            <h2 className="display-font mx-auto mt-3 max-w-2xl text-3xl font-bold leading-tight text-[var(--color-ink)] sm:text-5xl">
+              Rebuild your routine around
+              <span className="gradient-text"> real-time intelligence</span>
+            </h2>
+            <p className="mx-auto mt-4 max-w-lg text-lg text-[var(--color-ink-secondary)]">
+              Download Invest AI for iOS and run your next market session with a clear system behind each decision.
+            </p>
+
+            <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+              <a href={APP_STORE_URL} target="_blank" rel="noopener noreferrer" className="btn-primary">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+                </svg>
+                Download on App Store
+              </a>
+              <a href="#workflow" className="btn-secondary">
+                See daily workflow
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -569,15 +607,15 @@ function CTA() {
 
 function Footer() {
   return (
-    <footer className="px-4 pb-8 sm:px-8">
-      <div className="mx-auto flex max-w-6xl flex-col gap-4 border-t border-[var(--color-line)] py-7 text-sm text-muted sm:flex-row sm:items-center sm:justify-between">
+    <footer className="px-4 pb-8 sm:px-6">
+      <div className="section-container flex flex-col gap-4 border-t border-[var(--color-line)] py-7 text-sm text-[var(--color-muted)] sm:flex-row sm:items-center sm:justify-between">
         <BrandMark />
         <div className="flex items-center gap-6">
           <a
             href="https://orchlon.dev/"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-[var(--color-ink)]"
+            className="transition-colors hover:text-[var(--color-ink)]"
           >
             Support
           </a>
@@ -585,7 +623,7 @@ function Footer() {
             href={APP_STORE_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-[var(--color-ink)]"
+            className="transition-colors hover:text-[var(--color-ink)]"
           >
             App Store
           </a>
